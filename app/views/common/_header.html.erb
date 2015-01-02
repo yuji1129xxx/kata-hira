@@ -1,0 +1,34 @@
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to root_path, :class => 'navbar-brand' do %>
+      <%= image_tag("title.png") %>
+    <% end %>
+    <div class="navbar-collapse collapse navbar-responsive-collapse navbar-right">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "About Us", "/about" %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kata Hira <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to "カタひらとは？", "/ideas/info" %></li>
+            <li><%= link_to "おしながき", "/ideas" %></li>
+            <li><%= link_to "遊ぶ", "/ideas/new" %></li>
+          </ul>
+        </li>
+        <li><%= link_to "EVENTS", "/events" %></li>
+        <li><%= link_to "Contact", "/contact" %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to "ログイン", root_path %></li>
+            <li><%= link_to "会員登録", root_path %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
