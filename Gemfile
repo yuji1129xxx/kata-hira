@@ -38,3 +38,16 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'pry-rails'
+gem 'compass-rails'
+
+# bootstrap
+gem "therubyracer"
+gem "twitter-bootstrap-rails"
+gem 'bootstrap-material-design'
+
+# Use devise
+gem 'devise'
+gem 'paperclip'
+gem 'kaminari'
+gem 'unicorn'
