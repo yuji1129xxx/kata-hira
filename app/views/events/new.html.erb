@@ -1,0 +1,7 @@
+<% if @resource && @person %>
+  <%= render partial: 'steps/three' %>
+<% elsif @person %>
+  <%= render partial: 'steps/two' %>
+<% else %>
+  <%= render partial: 'steps/one' %>
+<% end %>

@@ -1,0 +1,24 @@
+<div class="col-lg-12">
+  <br>
+  <div class="row form">
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <% if @person.avatar.present? %>
+        <%= image_tag @person.avatar.url(:medium) %>
+      <% else %>
+        <%= image_tag("no_image.png", :size => "248×248") %>
+      <% end %>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <h3><%= @person.name %></h3>
+      <h4>keywords</h4>
+      <% @person.keywords.each do |keyword| %>
+        <p>◆ <%= keyword.name %></p>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <br>
+      <p><%= @person.detail %></p>
+      <%= link_to "このカタカナを選択", new_event_path(person_id: @person.id), :class => "btn btn-info normal" %>
+    </div>
+  </div>
+</div>

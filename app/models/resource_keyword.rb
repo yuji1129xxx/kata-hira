@@ -1,0 +1,2 @@
+class ResourceKeyword < Keyword
+end

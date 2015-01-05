@@ -18,9 +18,11 @@
           <%= yield %>
         </div>
       </div>
-      <footer class="row text-center">
-        <p class="white_text">TAKEYAMA LAB. 2014</p>
-      </footer>
+      <% unless params[:controller] == "devise/sessions" || params[:controller] == "devise/registrations" %>
+        <footer class="row text-center">
+          <p class="white_text">TAKEYAMA LAB. 2014</p>
+        </footer>
+      <% end %>
     </div>
   </body>
 </html>

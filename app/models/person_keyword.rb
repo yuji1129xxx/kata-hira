@@ -1,0 +1,2 @@
+class PersonKeyword < Keyword
+end
