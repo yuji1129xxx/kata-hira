@@ -1,0 +1,46 @@
+<div class="row form">
+  <div class="col-xs-12 col-sm-12 col-md-12 center">
+    <h2><%= @event.name %></h2>
+  </div>
+  <div class="col-xs-5 col-sm-5 col-md-5">
+    <% if @event.person.avatar.present? %>
+      <%= image_tag @event.person.avatar.url(:medium) %>
+    <% else %>
+      <%= image_tag("no_image.png", :size => "248×248") %>
+    <% end %>
+  </div>
+  <div class="col-xs-2 col-sm-2 col-md-2 center">
+    <br><br><br>
+    <%= image_tag("x.png") %>
+  </div>
+  <div class="col-xs-5 col-sm-5 col-md-5 right">
+    <% if @event.resource.avatar.present? %>
+      <%= image_tag @event.resource.avatar.url(:medium) %>
+    <% else %>
+      <%= image_tag("no_image.png", :size => "248×248") %>
+    <% end %>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <h4><%= @event.detail %></h4>
+  </div>
+  <% if @comments.present? %>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <h2>コメント一覧</h2>
+      <% @comments.each do |comment| %>
+        <div class="sct_inner">
+          <p><%= comment.text %></p>
+        </div>
+      <% end %>
+      <%= paginate(@comments) %>
+    </div>
+  <% end %>
+  <%= form_tag(comments_path) do %>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <h2>コメント投稿</h2>
+    </div>
+    <div class="col-xs-8 col-sm-8 col-md-8">
+      <input placeholder="コメントを入力してください" type="text" class="form-control" name="text" autofocus="true"></input>
+      <input type="hidden" name="event_id" value="<%= @event.id %>">
+    </div>
+  <% end %>
+</div>

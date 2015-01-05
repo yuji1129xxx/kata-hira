@@ -22,6 +22,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def show
+    @event = Event.find(id_params[:id])
+    @comments = @event.comments.order("created_at DESC").page(params[:page]).per(10)
+  end
+
   def info
   end
 
@@ -32,5 +37,9 @@ class EventsController < ApplicationController
 
   def create_params
     params.permit(:kata, :hira, :text, :person_id, :resource_id)
+  end
+
+  def id_params
+    params.permit(:id)
   end
 end
