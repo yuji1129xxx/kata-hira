@@ -19,6 +19,35 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def edit
+    @resource = Resource.find(id_params[:id])
+  end
+
+  def update
+    resource = Resource.find(id_params[:id])
+    resource.update(create_params)
+    if resource.persisted?
+      keywords_params.each_value do |keyword|
+        ResourceKeyword.create(name: keyword, material_id: resource.id) if keyword.present?
+      end
+      redirect_to "/admin?command=edit_resource"
+    else
+      redirect_to "/admin"
+    end
+  end
+
+  def destroy
+    Resource.find(id_params[:id]).destroy
+    redirect_to "/admin?command=delete_resource"
+  end
+
+  def delete_keywords
+    Resource.find(id_params[:id]).keywords.each do |keyword|
+      keyword.destroy
+    end
+    redirect_to "/admin?command=edit_resource"
+  end
+
   private
   def id_params
     params.permit(:id)
@@ -29,6 +58,6 @@ class ResourcesController < ApplicationController
   end
 
   def keywords_params
-    params.permit(:keyword1, :keyword2, :keyword3, :keyword4)
+    params.permit(:keyword1, :keyword2, :keyword3, :keyword4, :keyword5, :keyword6, :keyword7, :keyword8)
   end
 end

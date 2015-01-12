@@ -38,8 +38,16 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'pry-rails'
 gem 'compass-rails'
+
+# pry
+gem 'pry-rails'
+gem 'pry-coolline'
+gem 'pry-byebug'
+gem 'pry-doc'
+gem 'hirb'
+gem 'hirb-unicode'
+gem 'awesome_print'
 
 # bootstrap
 gem "therubyracer"
@@ -51,3 +59,8 @@ gem 'devise'
 gem 'paperclip'
 gem 'kaminari'
 gem 'unicorn'
+
+# heroku
+group :production, :staging do
+  gem 'rails_12factor'
+end

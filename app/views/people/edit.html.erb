@@ -1,0 +1,26 @@
+<div class="col-lg-12">
+  <div class="row form">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <%= form_tag(person_path, {:multipart => true, method: :patch}) do %>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <h3>Edit Name</h3>
+          <input placeholder="名前をカタカナで入力してください" type="text" class="form-control" name="name" autofocus="true" value="<%= @person.name %>"></input>
+          <h3>Edit Detail</h3>
+          <textarea placeholder="Detailを入力してください" name="detail" cols="30" rows="10" class="form-control"><%= @person.detail %></textarea>
+          <h3>Add Keywords</h3>
+          <input placeholder="キーワード1" type="text" class="form-control" name="keyword1"></input>
+          <input placeholder="キーワード2" type="text" class="form-control" name="keyword2"></input>
+          <input placeholder="キーワード3" type="text" class="form-control" name="keyword3"></input>
+          <h3>Edit Photo</h3>
+          <%= file_field_tag :avatar %>
+          <h4>※アップロード前に必ず正方形に成形すること！</h4>
+          <input type="submit" value="更新" class="btn btn-primary withripple">
+        </div>
+      <% end %>
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <h3>Delete Keywords</h3>
+        <%= link_to "削除", "/people/#{@person.id}/keywords", :class => "btn btn-primary withripple", method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -24,7 +24,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(id_params[:id])
-    @comments = @event.comments.order("created_at DESC").page(params[:page]).per(10)
+    @comments = @event.comments.page(params[:page]).per(10)
   end
 
   def info

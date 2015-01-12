@@ -2,6 +2,10 @@
   <%= render partial: 'admin/add_person' %>
 <% elsif params[:command] == "add_resource" %>
   <%= render partial: 'admin/add_resource' %>
+<% elsif params[:command] == "edit_person" %>
+  <%= render partial: 'admin/edit_person' %>
+<% elsif params[:command] == "edit_resource" %>
+  <%= render partial: 'admin/edit_resource' %>
 <% else %>
   <%= render partial: 'admin/general' %>
 <% end %>
