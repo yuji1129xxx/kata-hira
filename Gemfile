@@ -59,6 +59,7 @@ gem 'devise'
 gem 'paperclip'
 gem 'kaminari'
 gem 'unicorn'
+gem 'aws-sdk'
 
 # heroku
 group :production, :staging do
