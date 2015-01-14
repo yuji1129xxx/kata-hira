@@ -42,12 +42,15 @@ gem 'compass-rails'
 
 # pry
 gem 'pry-rails'
-gem 'pry-coolline'
-gem 'pry-byebug'
-gem 'pry-doc'
-gem 'hirb'
-gem 'hirb-unicode'
-gem 'awesome_print'
+
+group :development, :test do
+  gem 'pry-coolline'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'awesome_print'
+end
 
 # bootstrap
 gem "therubyracer"
