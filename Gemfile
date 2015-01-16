@@ -38,19 +38,11 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'compass-rails'
+#gem 'compass-rails'
 
 # pry
 gem 'pry-rails'
-
-group :development, :test do
-  gem 'pry-coolline'
-  gem 'pry-byebug'
-  gem 'pry-doc'
-  gem 'hirb'
-  gem 'hirb-unicode'
-  gem 'awesome_print'
-end
+gem 'rb-readline', '~> 0.4.2'
 
 # bootstrap
 gem "therubyracer"

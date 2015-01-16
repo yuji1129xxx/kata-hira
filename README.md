@@ -1,2 +1,2 @@
-kata-hira
+katahira
 =========
