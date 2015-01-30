@@ -2,7 +2,7 @@
   <div class="log-in">
     <div class="log-in-inner">
       <div class="center">
-        <%= image_tag("login.png") %>
+        <%= image_tag("login.png", :class => "img-responsive") %>
       </div>
       <h2>カタひらで遊ぶにはログインしてね！</h2>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

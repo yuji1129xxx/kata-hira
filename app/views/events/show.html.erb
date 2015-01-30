@@ -11,21 +11,14 @@
       <% end %>
     </h2>
   </div>
-  <div class="col-xs-5 col-sm-5 col-md-5">
-    <%= image_tag(person_photo(@event.person), :size => "248×248") %>
+  <div class="col-xs-4 col-sm-4 col-md-4">
+    <%= image_tag(person_photo(@event.person), :class => "img-responsive") %>
   </div>
-  <div class="col-xs-2 col-sm-2 col-md-2 center">
-    <br><br><br>
-    <%= image_tag("x.png", :size => "100x100") %>
+  <div class="col-xs-4 col-sm-4 col-md-4">
+    <%= image_tag("x.png", :class => "img-responsive") %>
   </div>
-  <div class="col-xs-5 col-sm-5 col-md-5 right">
-    <% if @event.resource.avatar.present? %>
-      <%= image_tag @event.resource.avatar.url(:medium) %>
-    <% elsif @event.resource.pfile %>
-      <%= image_tag("resources/#{@event.resource.pfile}.png", :size => "248×248") %>
-    <% else %>
-      <%= image_tag("no_image2.png", :size => "248×248") %>
-    <% end %>
+  <div class="col-xs-4 col-sm-4 col-md-4">
+    <%= image_tag(resource_photo(@event.resource), :class => "img-responsive") %>
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12">
     <h4><%= br(@event.detail) %></h4>

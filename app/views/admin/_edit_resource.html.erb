@@ -5,13 +5,7 @@
     </div>
     <% @resources.each do |resource| %>
       <div class="col-xs-6 col-sm-6 col-md-6">
-        <% if resource.avatar.present? %>
-          <%= image_tag resource.avatar.url(:medium) %>
-        <% elsif resource.pfile %>
-          <%= image_tag("resources/#{resource.pfile}.png", :size => "248×248") %>
-        <% else %>
-          <%= image_tag("no_image2.png", :size => "248×248") %>
-        <% end %>
+        <%= image_tag(resource_photo(resource), :class => "img-responsive") %>
       </div>
       <div class="col-xs-6 col-sm-6 col-md-6">
         <h3><%= resource.name %></h3>

@@ -5,14 +5,13 @@
     <% end %>
   </div>
   <div class="col-xs-5 col-sm-5 col-md-5">
-    <%= image_tag(person_photo(@event.person), :size => "248×248") %>
+    <%= image_tag(person_photo(@event.person), :class => "img-responsive") %>
   </div>
-  <div class="col-xs-2 col-sm-2 col-md-2 center">
-    <br><br><br>
-    <%= image_tag("x.png", :size => "100x100") %>
+  <div class="col-xs-4 col-sm-4 col-md-4">
+    <%= image_tag("x.png", :class => "img-responsive") %>
   </div>
-  <div class="col-xs-5 col-sm-5 col-md-5 right">
-    <%= image_tag(resource_photo(@event.resource), :size => "248×248") %>
+  <div class="col-xs-4 col-sm-4 col-md-4">
+    <%= image_tag(resource_photo(@event.resource), :class => "img-responsive") %>
   </div>
 </div>
 <div class="row form">

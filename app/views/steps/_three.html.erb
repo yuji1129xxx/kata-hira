@@ -1,16 +1,10 @@
 <div class="col-lg-12">
   <div class="center">
-    <%= image_tag("step3.png") %>
+    <%= image_tag("step3.png", :class => "img-responsive") %>
   </div>
   <div class="row form">
     <div class="col-xs-6 col-sm-6 col-md-6">
-      <% if @person.avatar.present? %>
-        <%= image_tag @person.avatar.url(:medium) %>
-      <% elsif @person.pfile %>
-        <%= image_tag("people/#{@person.pfile}.png", :size => "248×248") %>
-      <% else %>
-        <%= image_tag("no_image1.png", :size => "248×248") %>
-      <% end %>
+      <%= image_tag(person_photo(@person), :class => "img-responsive") %>
     </div>
     <div class="col-xs-6 col-sm-6 col-md-6">
       <h3><%= @person.name %></h3>
@@ -23,13 +17,7 @@
   <div class="center"><%= image_tag("x.png") %></div>
   <div class="row form">
     <div class="col-xs-6 col-sm-6 col-md-6">
-      <% if @resource.avatar.present? %>
-        <%= image_tag @resource.avatar.url(:medium) %>
-      <% elsif @resource.pfile %>
-        <%= image_tag("resources/#{@resource.pfile}.png", :size => "248×248") %>
-      <% else %>
-        <%= image_tag("no_image2.png", :size => "248×248") %>
-      <% end %>
+      <%= image_tag(resource_photo(@resource), :class => "img-responsive") %>
     </div>
     <div class="col-xs-6 col-sm-6 col-md-6">
       <h3><%= @resource.name %></h3>

@@ -1,5 +1,5 @@
-<div class="row form_full">
-  <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 center">
+<div class="row form">
+  <div class="col-xs-12 col-sm-12 col-md-12 center">
     <h2><%= event.name %> 
       <% if current_user && current_user.id == event.user_id %>
         <small><%= link_to "編集", edit_event_path(event) %>・<%= link_to "削除", event_path(event), method: :delete %></small>
