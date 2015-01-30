@@ -2,11 +2,8 @@ class AdminController < ApplicationController
   before_filter :auth
   
   def index
-    if params[:command] == "delete_person" || params[:command] == "edit_person"
-      @people = Person.all.order("created_at DESC").page(params[:page]).per(10)
-    elsif params[:command] == "delete_resource" || params[:command] == "edit_resource"
-      @resources = Resource.all.order("created_at DESC").page(params[:page]).per(10)
-    end
+    @people = Person.recent.page(params[:page]).per(10) if delete_or_edit_person?
+    @resources = Resource.recent.page(params[:page]).per(10) if delete_or_edit_resource?
   end
 
   private
@@ -14,5 +11,13 @@ class AdminController < ApplicationController
     authenticate_or_request_with_http_basic do |user,pass|
       user == 'katahira' && pass == 'takeyama'
     end
+  end
+
+  def delete_or_edit_person?
+    params[:command] == "delete_person" || params[:command] == "edit_person"
+  end
+
+  def delete_or_edit_resource?
+    params[:command] == "delete_resource" || params[:command] == "edit_resource"
   end
 end

@@ -1,15 +1,13 @@
 <div class="row form">
   <div class="col-xs-12 col-sm-12 col-md-12 center">
-    <h2><%= event.name %></h2>
+    <h2><%= event.name %> 
+      <% if current_user && current_user.id == event.user_id %>
+        <small><%= link_to "編集", edit_event_path(event) %>・<%= link_to "削除", event_path(event), method: :delete %></small>
+      <% end %>
+    </h2>
   </div>
   <div class="col-xs-5 col-sm-5 col-md-5">
-    <% if event.person.avatar.present? %>
-      <%= image_tag event.person.avatar.url(:medium) %>
-    <% elsif event.person.pfile %>
-      <%= image_tag("people/#{event.person.pfile}.png", :size => "248×248") %>
-    <% else %>
-      <%= image_tag("no_image1.png", :size => "248×248") %>
-    <% end %>
+    <%= image_tag(person_photo(event.person), :size => "248×248") %>
   </div>
   <div class="col-xs-2 col-sm-2 col-md-2">
     <br><br><br>
@@ -25,7 +23,11 @@
     <% end %>
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12">
-    <h4><%= event.detail %></h4>
-    <%= link_to "詳細", event_path(event), :class => "btn btn-info normal" %>
+    <h4><%= br(event.detail) %></h4>
+    <div class="right">
+      <%= link_to event_path(event) do %>
+        <p>→イベント詳細</p>
+      <% end %>
+    </div>
   </div>
 </div>

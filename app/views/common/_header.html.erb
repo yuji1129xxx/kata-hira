@@ -30,7 +30,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <% if user_signed_in? %>
-              <!-- <li><%= link_to "マイページ", root_path %></li> -->
+              <li><%= link_to "マイページ", user_path(current_user) %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li><%= link_to "ログイン", new_user_session_path %></li>

@@ -1,0 +1,28 @@
+<div class="row form">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <%= link_to events_path do %>
+      <p>一覧に戻る</p>
+    <% end %>
+  </div>
+  <div class="col-xs-5 col-sm-5 col-md-5">
+    <%= image_tag(person_photo(@event.person), :size => "248×248") %>
+  </div>
+  <div class="col-xs-2 col-sm-2 col-md-2 center">
+    <br><br><br>
+    <%= image_tag("x.png", :size => "100x100") %>
+  </div>
+  <div class="col-xs-5 col-sm-5 col-md-5 right">
+    <%= image_tag(resource_photo(@event.resource), :size => "248×248") %>
+  </div>
+</div>
+<div class="row form">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <%= form_tag(event_path, method: :patch) do %>
+      <h2>イベント名</h2>
+      <input placeholder="イベント名を入力してください" type="text" class="form-control" name="name" value="<%= @event.name %>"></input>
+      <h2>イベント概要</h2>
+      <textarea placeholder="イベント概要を入力してください" name="detail" cols="30" rows="10" class="form-control"><%= @event.detail %></textarea>
+      <input type="submit" value="更新する" class="btn btn-primary withripple">
+    <% end %>
+  </div>
+</div>

@@ -343,7 +343,7 @@ input[type=submit] {
     margin-top: 0;
   }
   h3 {
-    border-bottom: 2px solid $base_sub;
+    // border-bottom: 2px solid $base_sub;
     padding: 10px 0;
     margin-bottom: 10px;
     font-size: 1.3em;
@@ -400,7 +400,7 @@ input[type=submit] {
   &.form {
     width: 70%;
     background-color: #fff;
-    padding: 30px;
+    padding: 20px;
     margin: 20px auto;
     input[type="text"] {
       margin-bottom: 20px;
@@ -575,7 +575,6 @@ footer {
 
 .form_clear {
     width: 70%;
-    padding: 30px;
     margin: 20px auto;
   }
 

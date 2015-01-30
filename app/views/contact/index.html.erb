@@ -1,24 +1,18 @@
-<div class="col-lg-12">
-  <div class="center">
-    <br>
-    <%= image_tag("contact.png") %>
-  </div>
-  <div class="center">
+<div class="row form_clear">
+  <div class="col-lg-12 center">
+    <%= image_tag("contact.png", :class => "img-responsive") %>
+
     <%= link_to "mailto:takeyamalab.global2014@gmail.com" do %>
-      <%= image_tag("mail.png") %>
-      Mail
+      <%= image_tag("mail.png") %> Mail
     <% end %>
     <%= link_to "http://keglab.jp/", :target=>["_blank"] do %>
-      <%= image_tag("web.png") %>
-      Web
+      <%= image_tag("web.png") %> Web
     <% end %>
     <%= link_to "https://twitter.com/Takeyama_Lab", :target=>["_blank"] do %>
-      <%= image_tag("twitter.png") %>
-      Twitter
+      <%= image_tag("twitter.png") %> Twitter
     <% end %>
     <%= link_to "https://www.facebook.com/TakeyamaLab", :target=>["_blank"] do %>
-      <%= image_tag("facebook.png") %>
-      Facebook
+      <%= image_tag("facebook.png") %> Facebook
     <% end %>
   </div>
 </div>

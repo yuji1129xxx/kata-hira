@@ -2,5 +2,9 @@ class Event < ActiveRecord::Base
   # association
   belongs_to :person
   belongs_to :resource
-  has_many :comments
+  belongs_to :user
+  has_many :comments, dependent: :destroy
+
+  # scope
+  scope :recent, -> { order('created_at DESC') }
 end

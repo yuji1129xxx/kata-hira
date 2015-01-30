@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   delete 'resources/:id/keywords' => 'resources#delete_keywords'
   get '/admin' => 'admin#index'
   resources   :comments
+  resources   :users
 end
