@@ -576,7 +576,17 @@ footer {
 .form_clear {
     width: 70%;
     margin: 20px auto;
+    text-align: center;
   }
+
+.form_full {
+  margin: 20px auto;
+  background-color: #fff;
+}
+
+.text_long {
+  word-wrap: break-word;
+}
 
 .pagination {
   display: block;
