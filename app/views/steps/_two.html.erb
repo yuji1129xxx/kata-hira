@@ -1,21 +1,19 @@
-<div class="col-lg-12">
-  <div class="center">
-    <%= image_tag("step2.png", :class => "img-responsive") %>
-  </div>
-  <% @resources.each do |resource| %>
-    <div class="row form">
-      <div class="col-xs-6 col-sm-6 col-md-6">
-        <%= image_tag(resource_photo(resource), :class => "img-responsive") %>
-      </div>
-      <div class="col-xs-6 col-sm-6 col-md-6">
-        <h3><%= resource.name %></h3>
-        <h4>keywords</h4>
-        <% resource.keywords.each do |keyword| %>
-          <p>◆ <%= keyword.name %></p>
-        <% end %>
-        <%= link_to "詳細", resource_path(resource, person_id: params[:person_id]), :class => "btn btn-info normal" %>
-      </div>
+<%= image_tag("step2.png", :class => "img-responsive") %>
+<% @resources.each do |resource| %>
+  <div class="row form">
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <%= image_tag(resource_photo(resource), :class => "img-responsive") %>
     </div>
-  <% end %>
-  <%= paginate(@resources) %>
-</div>
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <h3><%= resource.name %></h3>
+      <h4>keywords</h4>
+      <% resource.keywords.each do |keyword| %>
+        <p>◆ <%= keyword.name %></p>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 right">
+      <p><%= link_to "→詳細", resource_path(resource, person_id: params[:person_id]) %></p>
+    </div>
+  </div>
+<% end %>
+<%= paginate(@resources) %>
