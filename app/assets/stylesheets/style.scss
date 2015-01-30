@@ -589,10 +589,88 @@ footer {
 }
 
 .login_bg {
-  width: 80% auto;
-  margin: 20px auto;
-  background-color: #fff;
-}
+    width: 40%;
+    background-color: rgba(#fff,0.93);
+    padding: 20px;
+    margin: 20px auto;
+    input[type="text"] {
+      margin-bottom: 20px;
+    }
+    .btn {
+      padding: 10px 30px;
+      margin: 30px auto;
+      display: block;
+      max-width: 200px;
+    }
+    textarea {
+      width: 100%;
+      line-height: 30px;
+      height: 120px;
+    }
+    section {
+      padding: 0;
+      margin-bottom: 20px;
+      .sct_inner {
+        border: 1px solid #eee;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      h4 {
+        font-weight: bold;
+        white-space: pre-wrap;
+        border: 0;
+        padding: 0;
+        margin: 0 10px 5px 0;
+        font-size: 1em;
+        line-height: 26px;
+        &.answer {
+          border-color: $accent;
+          letter-spacing: 0;
+          a {
+            color: $accent;
+            padding: 0;
+          }
+          span{
+            width: 26px;
+            height: 26px;
+            line-height: 26px;
+            background-color: $accent;
+          }
+        }
+        a {
+          // display: block;
+          // padding: 0;
+        }
+        span {
+          border-radius: 50%;
+          width: 26px;
+          height: 26px;
+          background-color: $base;
+          line-height: 26px;
+          font-size: .6em;
+          color: #fff;
+          display: inline-block;
+          text-align: center;
+          // float: left;
+          margin-right: 5px;
+          letter-spacing: 0;
+        }
+      }
+      p {
+        font-weight: normal;
+        margin: 0;
+        font-size: .9em;
+      }
+    }
+    .clearfix {
+      section {
+          padding: 0 10px 0 0;
+        &:nth-child(2n) {
+          padding: 0;
+        }
+      }
+    }
+  }
 
 .pagination {
   display: block;
