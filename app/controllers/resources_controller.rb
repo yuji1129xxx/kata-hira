@@ -8,7 +8,7 @@ class ResourcesController < ApplicationController
   end
 
   def create
-    resource = Resource.create(create_params)
+    resource = Resource.create(resource_params)
     if resource.persisted?
       keywords_params.each_value do |keyword|
         ResourceKeyword.create(name: keyword, material_id: resource.id) if keyword.present?
@@ -25,7 +25,7 @@ class ResourcesController < ApplicationController
 
   def update
     resource = Resource.find(id_params[:id])
-    resource.update(create_params)
+    resource.update(resource_params)
     if resource.persisted?
       keywords_params.each_value do |keyword|
         ResourceKeyword.create(name: keyword, material_id: resource.id) if keyword.present?
@@ -53,8 +53,8 @@ class ResourcesController < ApplicationController
     params.permit(:id)
   end
 
-  def create_params
-    params.permit(:name, :detail, :avatar)
+  def resource_params
+    params.permit(:name, :detail, :avatar, :pfile)
   end
 
   def keywords_params

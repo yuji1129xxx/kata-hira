@@ -8,7 +8,7 @@ class PeopleController < ApplicationController
   end
 
   def create
-    person = Person.create(create_params)
+    person = Person.create(person_params)
     if person.persisted?
       keywords_params.each_value do |keyword|
         PersonKeyword.create(name: keyword, material_id: person.id) if keyword.present?
@@ -25,7 +25,7 @@ class PeopleController < ApplicationController
 
   def update
     person = Person.find(id_params[:id])
-    person.update(create_params)
+    person.update(person_params)
     if person.persisted?
       keywords_params.each_value do |keyword|
         PersonKeyword.create(name: keyword, material_id: person.id) if keyword.present?
@@ -53,8 +53,8 @@ class PeopleController < ApplicationController
     params.permit(:id)
   end
 
-  def create_params
-    params.permit(:name, :detail, :avatar)
+  def person_params
+    params.permit(:name, :detail, :avatar, :pfile)
   end
 
   def keywords_params
