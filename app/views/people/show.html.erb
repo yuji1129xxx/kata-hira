@@ -13,7 +13,7 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
       <br>
-      <p><%= @person.detail %></p>
+      <p><%= br(@person.detail) %></p>
       <%= link_to "このカタカナを選択", new_event_path(person_id: @person.id), :class => "btn btn-info normal" %>
     </div>
   </div>
